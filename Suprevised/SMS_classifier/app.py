@@ -1,9 +1,8 @@
 import streamlit as st
 import pickle
-from sklearn.feature_extraction.text import CountVectorizer
 
 # Load the trained model and CountVectorizer
-with open('model.pkl', 'rb') as model_file, open('tfidfVectorizer.pkl.pkl', 'rb') as vectorizer_file:
+with open('model.pkl', 'rb') as model_file, open('tfidfVectorizer.pkl', 'rb') as vectorizer_file:
     model = pickle.load(model_file)
     vectorizer = pickle.load(vectorizer_file)
 
