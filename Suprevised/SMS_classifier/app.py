@@ -1,8 +1,12 @@
 import streamlit as st
 import pickle
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve(strict=True).parent
+
 
 # Load the trained model and CountVectorizer
-with open('model.pkl', 'rb') as model_file, open('tfidfVectorizer.pkl', 'rb') as vectorizer_file:
+with open(f'{BASE_DIR}/model.pkl', 'rb') as model_file, open(f'{BASE_DIR}/tfidfVectorizer.pkl', 'rb') as vectorizer_file:
     model = pickle.load(model_file)
     vectorizer = pickle.load(vectorizer_file)
 
